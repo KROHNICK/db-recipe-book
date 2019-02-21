@@ -1,10 +1,8 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable("dishes", function(tbl) {
     tbl.increments();
-    tbl
-      .string("name", 128)
-      .notNullable()
-      .timestamps(true.true);
+    tbl.string("name", 128).notNullable();
+    tbl.timestamps(true, true);
   });
 };
 
