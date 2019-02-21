@@ -22,8 +22,22 @@ const addRecipe = recipe => {
   return db("recipes").insert(recipe);
 };
 
+const updateRecipe = (id, recipe) => {
+  return db("recipes")
+    .where({ id })
+    .update(recipe);
+};
+
+const deleteRecipe = id => {
+  return db("recipes")
+    .where({ id })
+    .del();
+};
+
 module.exports = {
   getRecipes,
   getRecipe,
-  addRecipe
+  addRecipe,
+  updateRecipe,
+  deleteRecipe
 };
