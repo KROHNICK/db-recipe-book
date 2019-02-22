@@ -13,8 +13,8 @@ server.use(morgan("dev"));
 server.use("/api/dishes", dishRoutes);
 server.use("/api/recipes", recipeRoutes);
 
-// server.get("/api", (req, res) => {
-//   res.send("Server works.");
-// });
+server.get("/api", (req, res) => {
+  res.send("Server works.");
+});
 
 module.exports = server;
